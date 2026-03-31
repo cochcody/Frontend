@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Developer Support | Code‑X</title>
+
+    <!-- Correct CSS path -->
+    <link rel="stylesheet" href="../css/style.css">
+
+    <!-- JS path -->
+    <script src="../scripts/main.js" defer></script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", async () => {
+            await requireDeveloper();
+
+            const form = document.getElementById("devSupportForm");
+            form.addEventListener("submit", handleDevContact);
+        });
+    </script>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header class="site-header">
+        <div class="logo">
+            <img src="../assets/logo.png" alt="Code‑X Logo">
+        </div>
+
+        <nav>
+            <a href="../index.html">Home</a>
+            <a href="../download.html">Download</a>
+            <a href="../contact.html">Support</a>
+            <a href="../legal.html">Legal</a>
+            <a id="logout-link">Logout</a>
+
+        </nav>
+    </header>
+
+
+    <!-- MAIN LAYOUT -->
+    <main class="dashboard-layout">
+
+        <!-- SIDEBAR -->
+        <aside class="sidebar">
+            <h2>Developer Menu</h2>
+
+            <a href="index.html">Dashboard Home</a>
+            <a href="upload.html">Upload Game Build</a>
+            <a href="contact-dev.html" class="active">Developer Support</a>
+            <a href="../index.html" onclick="clearToken()">Log Out</a>
+        </aside>
+
+
+        <!-- MAIN CONTENT -->
+        <section class="section form-card">
+            <h1>Developer Support</h1>
+            <p class="form-note">
+                Need help with uploads, APIs, or integration? Send a message directly to the Code‑X developer support
+                team.
+            </p>
+
+            <form id="devSupportForm" class="form">
+
+                <div class="form-row">
+                    <label for="subject">Subject</label>
+                    <input id="subject" name="subject" type="text" required>
+                </div>
+
+                <div class="form-row">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" rows="6" required></textarea>
+                </div>
+
+                <button class="btn primary" type="submit">Send Message</button>
+
+            </form>
+        </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+        <div>© 2026 Code‑X. All rights reserved.</div>
+
+        <div class="footer-links">
+            <a href="../legal.html">Legal</a>
+        </div>
+    </footer>
+
+</body>
+
+</html>
