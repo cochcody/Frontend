@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Code‑X Vault | Developer Application</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="../scripts/main.js" defer></script>
+    <script src="vault.js" defer></script>
+</head>
+
+<body>
+    <header class="site-header">
+        <nav>
+            <a href="/dashboard/user.html">Library</a>
+            <a href="/dashboard/vault.html" class="active">Code‑X Vault</a>
+            <a id="logout-link" href="#" style="cursor:pointer;">Logout</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="section form-card">
+            <h1>Apply as a Developer</h1>
+            <p class="form-subtitle">Submit a request to become a Code‑X developer.</p>
+
+            <form id="vaultForm" class="form">
+
+                <div class="form-row">
+                    <label>Company</label>
+                    <input name="company" autocomplete="organization" required>
+                </div>
+
+                <div class="form-row">
+                    <label>Website</label>
+                    <input name="website" autocomplete="url">
+                </div>
+
+                <div class="form-row">
+                    <label>Description</label>
+                    <textarea name="description" autocomplete="off" rows="4" required></textarea>
+                </div>
+
+                <button class="btn primary" type="submit">Submit Application</button>
+            </form>
+        </section>
+    </main>
+</body>
+
+</html>
