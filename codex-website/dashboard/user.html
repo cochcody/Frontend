@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>My Library | Code‑X</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="../scripts/main.js" defer></script>
+    <script src="../scripts/user-dashboard.js" defer></script>
+</head>
+
+<body>
+
+    <header class="site-header">
+        <nav>
+            <a href="store.html">Store</a>
+            <a href="user.html" class="active">Library</a>
+            <a href="vault.html">Code‑X Vault</a>
+
+            <!-- Gamertag Display -->
+            <span id="user-gamertag" style="margin-left:auto; padding-right:20px; font-weight:bold;"></span>
+
+            <a id="logout-link" href="#" style="cursor:pointer;">Logout</a>
+        </nav>
+    </header>
+
+    <main class="section">
+        <h1>My Library</h1>
+
+        <div id="library-list">
+            <!-- Filled by user-dashboard.js -->
+        </div>
+    </main>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            // Get gamertag from login
+            const gamertag = localStorage.getItem("gamertag");
+
+            // If no gamertag, user is not logged in
+            if (!gamertag) {
+                window.location.href = "../login.html";
+                return;
+            }
+
+            // Display gamertag in top-right
+            document.getElementById("user-gamertag").textContent = gamertag;
+
+            // Logout button
+            const logout = document.getElementById("logout-link");
+            logout.addEventListener("click", () => {
+                localStorage.removeItem("token");
+                localStorage.removeItem("user");
+                localStorage.removeItem("gamertag");
+                window.location.href = "../login.html";
+            });
+        });
+    </script>
+
+</body>
+
+</html>
