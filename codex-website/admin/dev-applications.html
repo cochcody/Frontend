@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Developer Applications</title>
+
+    <!-- Main site styles -->
+    <link rel="stylesheet" href="../css/style.css">
+
+    <!-- Admin styles (correct path inside /admin/css/) -->
+    <link rel="stylesheet" href="css/admin.css">
+</head>
+
+<body>
+
+    <!-- ADMIN TOP NAV -->
+    <header class="site-header">
+        <nav>
+    <a href="index.html">Dashboard</a>
+    <a href="store-management.html">Store Management</a>
+    <a href="users-management.html">User Management</a>
+    <a href="analytics.html">Analytics</a>
+    <a href="dev-applications.html">Developer Applications</a>
+    <a href="game-approval.html">Game Aproval</a>
+    <a id="logout-btn" href="#">Logout</a>
+    </nav>
+
+    <!-- MAIN CONTENT -->
+    <section class="admin-container">
+        <h1>Developer Applications</h1>
+
+        <!-- MUST MATCH JS EXACTLY -->
+        <div id="applications-container"></div>
+    </section>
+
+    <!-- SCRIPTS (ORDER MATTERS) -->
+    <!-- main.js is OUTSIDE the admin folder -->
+    <script src="../scripts/main.js"></script>
+
+    <!-- admin JS is INSIDE admin/scripts -->
+    <script src="scripts/admin-dev-applications.js"></script>
+
+</body>
+
+</html>
