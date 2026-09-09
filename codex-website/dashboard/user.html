@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>My Library | Code‑X</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="../scripts/main.js" defer></script>
+    <script src="../scripts/user-dashboard.js" defer></script>
+</head>
+
+<body>
+
+    <header class="site-header">
+        <nav>
+            <!-- FIXED: Store link no longer logs you out -->
+            <a href="store.html" id="home-link">Store</a>
+            <a href="user.html" class="active">Library</a>
+            <a href="vault.html">Code‑X Vault</a>
+
+            <!-- FIXED: Gamertag + Logout grouped and pushed right -->
+            <div class="nav-right">
+                <span id="user-gamertag"></span>
+                <a id="logout-link" href="#">Logout</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="section">
+        <h1>My Library</h1>
+
+        <div id="library-list">
+            <!-- Filled by user-dashboard.js -->
+        </div>
+    </main>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const gamertag = localStorage.getItem("gamertag");
+
+            if (!gamertag) {
+                window.location.href = "../login.html";
+                return;
+            }
+
+            document.getElementById("user-gamertag").textContent = gamertag;
+
+            const logout = document.getElementById("logout-link");
+            logout.addEventListener("click", () => {
+                localStorage.removeItem("token");
+                localStorage.removeItem("user");
+                localStorage.removeItem("gamertag");
+                window.location.href = "../login.html";
+            });
+        });
+    </script>
+
+</body>
+
+</html>
